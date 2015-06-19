@@ -8,8 +8,8 @@ Template Name: Home Page
 <div class="static-header-image-container">
 	<?php echo get_the_post_thumbnail( $page->ID, 'large', array( 'class'	=> "static-header-image") ); ?>
 </div> 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area row">
+		<main id="main" class="site-main large-12 columns" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 

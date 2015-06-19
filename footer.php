@@ -17,10 +17,12 @@
 			<span class="sep"> | </span>  <div class="test-footer"><?php echo customText('copyright'); ?></div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
+	</div>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 <script  type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/foundation.min.js"></script>
+<script  type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/custom.js"></script>
 </body>
 </html>

@@ -77,7 +77,7 @@ function doolittle_vendors_create_options() {
 	        '2px' => '2px',
 	        '5px' => '5px',
     	),
-		'css' => '.button-primary, .button-secondary, .button-tertiary { border-radius: value }',
+		'css' => '.button { border-radius: value }',
 	) );
 	
 	
