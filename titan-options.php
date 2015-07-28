@@ -77,7 +77,7 @@ function doolittle_vendors_create_options() {
 	        '2px' => '2px',
 	        '5px' => '5px',
     	),
-		'css' => '.button { border-radius: value }',
+		'css' => '.btn { border-radius: value }',
 	) );
 	
 	
@@ -128,10 +128,10 @@ function doolittle_vendors_create_options() {
 	) );
 	
 	$HeaderTab->createOption( array(
-		'name' => __( 'Header Text', 'doolittle_vendors' ),
-		'id' => 'headertext',
+		'name' => __( 'Phone Number', 'doolittle_vendors' ),
+		'id' => 'phoneNumber',
 		'type' => 'text',
-		'desc' => __( 'Enter your header text here (sample only)', 'doolittle_vendors' ),
+		'desc' => __( 'Enter your phone number here (sample only)', 'doolittle_vendors' ),
 	) );
 	
 	$HeaderTab->createOption( array(

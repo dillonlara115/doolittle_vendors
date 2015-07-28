@@ -10,8 +10,8 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
+	<footer id="colophon" class="site-footer row" role="contentinfo">
+		<div class="site-info container">
 
 			<a href="//ventamarketing.com">Venta Marketing</a>
 			<span class="sep"> | </span>  <div class="test-footer"><?php echo customText('copyright'); ?></div>
@@ -21,8 +21,8 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
-<script  type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/foundation.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script  type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/custom.js"></script>
 </body>
 </html>

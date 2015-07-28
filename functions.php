@@ -153,10 +153,12 @@ function custom_theme_options() {
     // We create all our options here
     $titan = TitanFramework::getInstance( 'doolittle_vendors' );
 
-$section = $titan->createThemeCustomizerSection( array(
-    'name' => __( 'Footer Colors', 'doolittle_vendors' ),
-) );
+	$section = $titan->createThemeCustomizerSection( array(
+   		'name' => __( 'Footer Colors', 'doolittle_vendors' ),
+	) 
+	);
 
+//footer background color option
 $section->createOption( array(
     'name' => __( 'Background Color', 'doolittle_vendors' ),
     'id' => 'footer_bg',
@@ -164,7 +166,7 @@ $section->createOption( array(
     'default' => '#eeeeeee',
     'css' => 'footer { background: value }',
 ) );
-
+//footer text color option
 $section->createOption( array(
     'name' => __( 'Text Color', 'doolittle_vendors' ),
     'id' => 'footer_text_color',
