@@ -16,7 +16,7 @@ get_header(); ?>
 		<main id="main" class="site-main container" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
-
+				<h1><?php the_title(); ?></h1>	
 				<?php get_template_part( 'content', 'page' ); ?>
 
 			<?php endwhile; // end of the loop. ?>

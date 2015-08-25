@@ -13,9 +13,9 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
+	<div id="primary" class="content-area container">
+		<main id="main" class="site-main col-xs-12 col-sm-12 col-md-9 col-lg-9 col-md-push-3" role="main">
+		<h1><?php echo apply_filters('the_title',get_page( get_option('page_for_posts') )->post_title); ?></h1>	
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
@@ -40,7 +40,8 @@ get_header(); ?>
 		<?php endif; ?>
 
 		</main><!-- #main -->
+		<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-md-pull-9">
+			<?php get_sidebar(); ?>
+		</div>
 	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

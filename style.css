@@ -58,7 +58,6 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
 	font-family: inherit;
-	font-size: 100%;
 	font-style: inherit;
 	font-weight: inherit;
 	margin: 0;
@@ -83,7 +82,10 @@ html {
 body {
 	background: #fff; /* Fallback for when there is no custom background color defined. */
 }
-
+a {
+	-webkit-transition: color 250ms ease;
+	transition: color 250ms ease;
+}
 article,
 aside,
 details,
@@ -286,6 +288,32 @@ img {
 	max-width: 100%; /* Adhere to container width. */
 }
 
+.media-object	{
+	max-width: 150px;
+}
+
+.media-list {
+	margin-left: 0;
+}
+
+@media (max-width: 768px) {
+	
+	.media-left	{
+	    width: 100%;
+	    display: block;
+	    margin: 0 auto 1em;
+
+	}
+	.media-object {
+		max-width: 100%;
+	}
+	.media-body .pull-right {
+		float: none!important;
+		clear: both;
+		display: block;
+	}
+}
+
 figure {
 	margin: 0;
 }
@@ -314,7 +342,6 @@ textarea {
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
 	border: 1px solid;
 	border-color: #ccc #ccc #bbb;
 	border-radius: 3px;
@@ -403,6 +430,38 @@ textarea {
 5.0 Navigation
 --------------------------------------------------------------*/
 
+.menu-btn {
+	cursor: pointer;
+	font-size: 36px;
+}
+
+
+.gform_button.button {
+	color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+
 
 /*--------------------------------------------------------------
 5.2 Menus
@@ -428,6 +487,20 @@ textarea {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+}
+
+.navbar-brand {
+	padding: 0;
+}
+
+.header-brand {
+	display: inline-block;
+	line-height: 85px;
+}
+
+.site-title {
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .main-navigation ul ul {
@@ -646,6 +719,47 @@ textarea {
 	clear: both;
 	margin: 0 0 1.5em;
 }
+.header-contact {
+	text-align: right;
+	height: 50px;
+	padding-top: 15px;
+}
+
+.home-content {
+	margin-top: 1em;
+}
+
+a.social-link {
+    max-width: 35px;
+    display: inline-block;
+}
+.sub-menu {
+	min-width: 125px; /* Set width of the dropdown */
+	display: none;
+	position: absolute;
+	z-index: 999;
+	left: 0;
+	margin: 0;
+}
+ ul li:hover ul.sub-menu { 
+    display: block;	/* Display the dropdown */
+}
+
+ ul li ul.sub-menu li a{
+    display: block;
+    padding: 5px;
+}
+
+.btn {
+	margin-bottom: .5em;
+}
+
+
+.menu-footer-menu-container li{
+	display: inline-block;
+	margin: 0 .5em;
+}
+
 
 /*--------------------------------------------------------------
 10.2 Asides
@@ -653,6 +767,40 @@ textarea {
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
+}
+
+.menu-our-inventory-container ul {
+	list-style-type: none;
+	margin: 0;
+}
+
+.menu-our-inventory-container a {
+	display: block;
+	padding: 5px;
+	letter-spacing: 1px;
+	-webkit-transition: all 250ms ease;
+	transition: all 250ms ease;
+}
+.menu-our-inventory-container a:hover {
+	text-decoration: none;
+}
+
+.widget_nav_menu {
+    padding: 15px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.widget_nav_menu h2 {
+	border-bottom: 1px solid;
+	padding-bottom: .5em;
+	margin-bottom: .5em;
+
+}
+
+
+.widget-title {
+	font-size: 23px;
 }
 
 /*--------------------------------------------------------------
@@ -678,6 +826,11 @@ textarea {
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
 	display: block;
+}
+
+
+.entry-footer {
+	background-color: transparent;
 }
 
 /*--------------------------------------------------------------
@@ -976,5 +1129,16 @@ textarea.ginput_container input, textarea.ginput_container select, textarea.ginp
 figure.alignnone {
   margin-left: 0;
   margin-right: 0; }
+
+
+.featured-section h3 {
+	border-bottom: 1px solid;
+	padding: 1em 0;
+	margin-bottom: 1em;
+}
+
+.media {
+	border-bottom: 1px solid #ccc;
+}
 
 

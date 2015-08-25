@@ -90,8 +90,8 @@ function doolittle_vendors_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 }
 add_action( 'widgets_init', 'doolittle_vendors_widgets_init' );
@@ -146,6 +146,10 @@ require get_template_directory() . '/titan-framework-checker.php';
  * Load Titan Framework options
  */
 require get_template_directory() . '/titan-options.php';
+
+// This theme uses post thumbnails
+add_theme_support( 'post-thumbnails' );
+
 
 // custom containers
 add_action( 'tf_create_options', 'custom_theme_options' );
