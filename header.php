@@ -31,7 +31,7 @@
 
 	<header id="masthead" class="site-header navbar navbar-default push" role="banner">
 		<nav class="container">
-		  <div class="col-md-4 header-brand">
+		  <div class="col-xs-4 col-sm-4 col-md-4 header-brand">
 		  	<?php if ( get_header_image() ) : ?>
 					<div class="site-title">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="navbar-brand" rel="home">
@@ -42,18 +42,18 @@
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php endif; // End header image check. ?>
 			</div>
-			<div class="col-md-8">
+			<div class="col-sm-8 col-xs-8 col-md-8">
 			   	
-			   	<div class="hidden-xs col-sm-offset-6 col-sm-6 col-md-6 col-lg-6 header-contact">
-					<p class="site-description"><?php echo customText('phoneNumber'); ?> 
+			   	<div class="hidden-xs hidden-sm col-sm-offset-6 col-sm-6 col-md-6 col-lg-6 header-contact">
+					<p class="site-description"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><?php echo customText('phoneNumber'); ?> 
 						<a href="<?php echo customText('facebook'); ?>" class="social-link"><img src="http://maxtestdomain.com/doolittle-vendors/wp-content/uploads/2015/08/facebook.png" /></a>
 						<a href="<?php echo customText('twitter'); ?>" class="social-link"><img src="http://maxtestdomain.com/doolittle-vendors/wp-content/uploads/2015/08/twitter.png" /></a>
 						<a href="<?php echo customText('googleplus'); ?>" class="social-link"><img src="http://maxtestdomain.com/doolittle-vendors/wp-content/uploads/2015/08/googleplus.png" /></a>
 					</p>	
 				</div>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class'      => 'nav navbar-nav hidden-xs pull-right' ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class'      => 'nav navbar-nav hidden-xs hidden-sm pull-right' ) ); ?>
 				
-				<div class="menu-btn menu-btn--right visible-xs col-xs-1 pull-right">&#9776;</div>
+				<div class="menu-btn menu-btn--right visible-xs visible-sm col-xs-1 pull-right">&#9776;</div>
 		   	
 		  </div>
 		</nav>

@@ -12,22 +12,23 @@
 	
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="footer-contact">
-			<div class="container">
-			<div class="col-md-6">
-				<?php if(get_field('address', 12)) { ?>
-					<?php the_field('address', 12); ?><br>
+			<div class="container text-center">
+			
+				<?php if(get_field('address', 12)) { 
+					$location = get_field('address', 12);
+					
+					    $address = substr($location['address'], 0, strrpos($location['address'], ','));
+				?>
+					<address><?php echo $address; ?><br>
 				<?php } ?>
 				<?php if(get_field('primary_email_address', 12)) { ?>
-					<a href="mailto:<?php the_field('primary_email_address', 12); ?>"><?php the_field('primary_email_address', 12); ?></a><br>
+					<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:<?php the_field('primary_email_address', 12); ?>"><?php the_field('primary_email_address', 12); ?></a><br>
 				<?php } ?>
 				<?php if(get_field('phone_number', 12)) { ?>
-					<a href="tel:<?php the_field('phone_number', 12); ?>"><?php the_field('phone_number', 12); ?></a><br>
+					<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><a href="tel:<?php the_field('phone_number', 12); ?>"><?php the_field('phone_number', 12); ?></a><br>
 				<?php } ?>
 				
-				</div>
-				<div class="col-md-6">
-					<?php echo do_shortcode('[gravityform id="1" title="false" description="false"]'); ?>
-				</div>
+				</address>
 			</div>
 		</div>
 		<div class="site-info container text-center">
@@ -37,7 +38,7 @@
 				<a href="<?php echo customText('twitter'); ?>" class="social-link"><img src="http://maxtestdomain.com/doolittle-vendors/wp-content/uploads/2015/08/twitter.png" /></a>
 				<a href="<?php echo customText('googleplus'); ?>" class="social-link"><img src="http://maxtestdomain.com/doolittle-vendors/wp-content/uploads/2015/08/googleplus.png" /></a>
 			</p>
-			<div class="test-footer"><?php echo customText('copyright'); ?> <a href="//ventamarketing.com">Venta Marketing</a></div>
+			<div class="test-footer"><?php echo customText('copyright'); ?> | Powered by <a href="//doolittletrailers.com">Doolittle Marketing</a></div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 	</div>
@@ -45,7 +46,7 @@
 <!-- Site Overlay -->
 <div class="site-overlay--right"></div>
 <?php wp_footer(); ?>
-<nav class="visible-xs">
+<nav class="visible-xs visible-sm">
 	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class'      => 'pushy pushy-right ' ) ); ?>
 </nav>
 <!-- Latest compiled and minified JavaScript -->

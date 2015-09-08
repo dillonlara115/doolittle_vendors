@@ -33,7 +33,7 @@ get_header(); ?>
 			} else {
 				$trailer = null;
 			}?>
-			<?php echo $trailer; ?>
+			<h3>Available <?php echo $trailer; ?> trailers</h3>	
 			<?php 
 				// args
 				$args = array(

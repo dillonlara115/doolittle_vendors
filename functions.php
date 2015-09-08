@@ -163,8 +163,18 @@ function custom_theme_options() {
 	);
 
 //footer background color option
+//footer background color option
 $section->createOption( array(
-    'name' => __( 'Background Color', 'doolittle_vendors' ),
+    'name' => __( 'Top Footer Background Color', 'doolittle_vendors' ),
+    'id' => 'footer_top_bg',
+    'type' => 'color',
+    'default' => '#cccccc',
+    'css' => '.footer-contact { background: value }',
+) );
+
+
+$section->createOption( array(
+    'name' => __( 'Bottom Footer Background Color', 'doolittle_vendors' ),
     'id' => 'footer_bg',
     'type' => 'color',
     'default' => '#eeeeeee',

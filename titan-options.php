@@ -35,6 +35,15 @@ function doolittle_vendors_create_options() {
 		'css' => 'body { background-color: value }',
 	) );
 
+	$section->createOption( array(
+	    'name' => __( 'Homepage Slide Show Background Color', 'doolittle_vendors' ),
+	    'id' => 'slideshow_color1',
+	    'type' => 'color',
+	    'desc' => __( 'This color changes the background of your theme', 'doolittle_vendors' ),
+	    'default' => '#FFFFFF',
+		'css' => '.homepage-slide-show { background-color: value }',
+	) );
+
 
 	$section->createOption( array(
 	    'name' => __( 'Body Color', 'doolittle_vendors' ),
@@ -71,7 +80,7 @@ function doolittle_vendors_create_options() {
 	    'type' => 'color',
 	    'desc' => __( 'This color changes the link colors in your theme', 'doolittle_vendors' ),
 	    'default' => '#9F52CB',
-		'css' => '.navbar-default .navbar-nav>li>a, .menu-our-inventory-container .menu-item a { color: value }',
+		'css' => '.navbar-default .navbar-nav>li>a, .menu-our-inventory-container .menu-item a, ul li ul.sub-menu li a, .menu-btn { color: value }',
 	) );
 
 	/* set link colors */
@@ -94,6 +103,16 @@ function doolittle_vendors_create_options() {
 	    'default' => '#9F52CB',
 		'css' => '.menu-our-inventory-container a:hover { background-color: value }',
 	) );
+
+	/* set link colors */
+	$section->createOption( array(
+	    'name' => __( 'Widget Form Background Color', 'doolittle_vendors' ),
+	    'id' => 'widgetform_color1',
+	    'type' => 'color',
+	    'desc' => __( 'This color changes the Widget link hover color in your theme', 'doolittle_vendors' ),
+	    'default' => '#cccccc',
+		'css' => '.widget.gform_widget { background-color: value }',
+	) );
 	
 	$section->createOption( array(
 	    'name' => __( 'Headings Font', 'doolittle_vendors' ),
@@ -112,7 +131,7 @@ function doolittle_vendors_create_options() {
 	    'default' => array(
 	        'font-family' => 'Lora',
 	    ),
-		'css' => 'h1, h2, h3, h4, h5, h6 { value }',
+		'css' => 'h1, h2, h3, h4, h5, h6, .single-trailer-content strong { value }',
 	) );
 
 

@@ -7,49 +7,54 @@ Template Name: Home Page
 <?php get_header(); ?>
 <div class="static-header-image-container">
 	<?php echo get_the_post_thumbnail( $page->ID, 'large', array( 'class'	=> "static-header-image") ); ?>
+</div>
+<div class="row homepage-slide-show">
+<div class="container">
+<?php 
+	 $number = 0; 
+	// args
+	$args = array(
+		'post_type'		=> 'carousel',
+	);
+	// query
+	$the_query = new WP_Query( $args );
+	if( $the_query->have_posts() ): 
+?>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <?php while( $the_query->have_posts() ) : $the_query->the_post();   ?>
+    <li data-target="#carousel-example-generic"  data-slide-to="<?php echo $number++; ?>"></li>
+    <?php endwhile; ?>
+  </ol>
+
+  <!-- Carousel items -->
+  <div class="carousel-inner" role="listbox">
+    <?php while( $the_query->have_posts() ) : $the_query->the_post();  ?>
+    <div class="item">
+      <?php the_post_thumbnail('full'); ?>
+      <div class="carousel-caption">
+        <h3><?php the_title(); ?></h3>
+        <p><?php the_excerpt(); ?></p>
+      </div>
+    </div>
+    <?php endwhile; ?>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div> 
+</div>
+</div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main container" role="main">
-			<?php 
-				 $number = 0; 
-				// args
-				$args = array(
-					'post_type'		=> 'carousel',
-				);
-				// query
-				$the_query = new WP_Query( $args );
-				if( $the_query->have_posts() ): 
-			?>
-			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-			  <ol class="carousel-indicators">
-			    <?php while( $the_query->have_posts() ) : $the_query->the_post();   ?>
-			    <li data-target="#carousel-example-generic"  data-slide-to="<?php echo $number++; ?>"></li>
-			    <?php endwhile; ?>
-			  </ol>
-
-			  <!-- Carousel items -->
-			  <div class="carousel-inner" role="listbox">
-			    <?php while( $the_query->have_posts() ) : $the_query->the_post();  ?>
-			    <div class="item">
-			      <?php the_post_thumbnail('full'); ?>
-			      <div class="carousel-caption">
-			        <h3><?php the_title(); ?></h3>
-			        <p><?php the_excerpt(); ?></p>
-			      </div>
-			    </div>
-			    <?php endwhile; ?>
-			  </div>
-
-			  <!-- Controls -->
-			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-			    <span class="sr-only">Previous</span>
-			  </a>
-			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-			    <span class="sr-only">Next</span>
-			  </a>
-			</div>
+			
 			<?php endif; wp_reset_query(); ?>
 		
 				<div class=" home-content">

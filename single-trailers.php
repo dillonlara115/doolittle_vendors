@@ -14,25 +14,44 @@ get_header(); ?>
 			<h1><?php the_title(); ?></h1>
 			<?php 
 			if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-				the_post_thumbnail();
+				the_post_thumbnail('full');
 			} 
 			?>
-			<?php if(get_field('price')) { ?>
-				<strong>Price: </strong><?php the_field('price'); ?><br>
-			<?php } ?>
+			<div class="single-trailer-content">
+			
 
-			<strong>Description:</strong><br>
-			<?php the_content( ); ?>
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs nav-justified" role="tablist">
+			    <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
+			    <li role="presentation"><a href="#features" aria-controls="features" role="tab" data-toggle="tab">Features</a></li>
+			  </ul>
 
-			<?php doolittle_vendors_post_nav(); ?>
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane fade in active" id="description">
+			    	<?php the_content( ); ?>
+			    </div>
+			    <div role="tabpanel" class="tab-pane fade " id="features">
+			    	<?php if(get_field('price')) { ?>
+						<strong><span class="glyphicon glyphicon-usd" aria-hidden="true"></span>Price: </strong><?php the_field('price'); ?><br>
+					<?php } ?>
+					<?php if(get_field('color')) { ?>
+						<strong><span class="glyphicon glyphicon-tint" aria-hidden="true"></span>Color: </strong>
+						<?php the_field('color'); ?><br>
+					<?php } ?>
+					<?php if(get_field('dimensions')) { ?>
+						<strong><span class="glyphicon glyphicon-road" aria-hidden="true"></span>Dimensions: </strong>
+						<?php the_field('dimensions'); ?><br>
+					<?php } ?>
+					<?php if(get_field('features')) { ?>
+						<strong><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Features: </strong>
+						<?php the_field('features'); ?><br>
+					<?php } ?>
+			    </div>
+			  </div>
 
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
-
+			
+			</div>
 		<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->
