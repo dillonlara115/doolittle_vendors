@@ -107,7 +107,7 @@ Template Name: Home Page
 											<p>
 												<?php the_field('trailer_excerpt'); ?>
 												<br>
-												$<?php the_field('price'); ?>
+												<strong><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> </strong><?php echo number_format(get_field('price'), 2, '.', ','); ?>
 												<a href="<?php the_permalink(); ?>" class="pull-right btn btn-default">learn more</a>
 
 											</p>	

@@ -33,7 +33,8 @@ get_header(); ?>
 			} else {
 				$trailer = null;
 			}?>
-			<h3>Available <?php echo $trailer; ?> trailers</h3>	
+			<div class="featured-section"></div>
+			<h3 class="text-center">Available <?php echo $trailer; ?> trailers</h3>	
 			<?php 
 				// args
 				$args = array(
@@ -84,7 +85,7 @@ get_header(); ?>
 			<?php endif; ?>
 
 			<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>
-
+			</div>
 		</main><!-- #main -->
 		<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-md-pull-9">
 			<?php get_sidebar(); ?>

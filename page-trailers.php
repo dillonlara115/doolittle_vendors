@@ -154,7 +154,7 @@ get_header(); ?>
 											<p>
 												<?php the_field('trailer_excerpt'); ?>
 												<br>
-												<span class="glyphicon glyphicon-usd" aria-hidden="true"></span><?php the_field('price'); ?>
+												<span class="glyphicon glyphicon-usd" aria-hidden="true"></span><?php echo number_format(get_field('price'), 2, '.', ','); ?>
 												<a href="<?php the_permalink(); ?>" class="pull-right btn btn-default">learn more</a>
 
 											</p>	

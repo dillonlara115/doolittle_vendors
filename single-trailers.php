@@ -33,7 +33,7 @@ get_header(); ?>
 			    </div>
 			    <div role="tabpanel" class="tab-pane fade " id="features">
 			    	<?php if(get_field('price')) { ?>
-						<strong><span class="glyphicon glyphicon-usd" aria-hidden="true"></span>Price: </strong><?php the_field('price'); ?><br>
+						<strong><span class="glyphicon glyphicon-usd" aria-hidden="true"></span>Price: </strong><?php echo number_format(get_field('price'), 2, '.', ','); ?><br>
 					<?php } ?>
 					<?php if(get_field('color')) { ?>
 						<strong><span class="glyphicon glyphicon-tint" aria-hidden="true"></span>Color: </strong>
